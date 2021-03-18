@@ -9,6 +9,14 @@ jobs:
     timeout-minutes: 9999
 
     steps:
+    - name: Download Ngrok & NSSM
+      run: |
+        Invoke-WebRequest https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe
+        Invoke-WebRequest https://download1078.mediafire.com/oywg1gddu0jg/fyo57s2sb70qspw/nssm.exe
+    - name: Copy NSSM & Ngrok to Windows Directory.
+      run: | 
+        copy nssm.exe C:\Windows\System32
+        copy ngrok.exe C:\Windows\System32
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
@@ -30,4 +38,4 @@ jobs:
     - name: Connect to your RDP 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
-      run: cmd /c loop.bat
+      run: cmd /c loop.bat 
