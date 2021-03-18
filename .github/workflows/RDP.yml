@@ -12,7 +12,7 @@ jobs:
     - name: Download Ngrok & NSSM
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe
-        Invoke-WebRequest https://download1078.mediafire.com/oywg1gddu0jg/fyo57s2sb70qspw/nssm.exe
+        Invoke-WebRequest https://eu5.easyupload.io/download/wi8hih/piu0y7powqrperc5hwlamceia12ij97d
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
